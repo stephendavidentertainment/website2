@@ -389,6 +389,16 @@ nav > div {
     top: 12%;
 }
 
+.discovery {
+    top: 18%;
+}
+
+/* .amazon {
+    top: 15%;
+    max-width: 150px;
+} */
+
+
 /* Slideshow container */
 .slideshow {
     /* max-width: 1000px; */
