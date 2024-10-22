@@ -368,7 +368,7 @@ nav > div {
     animation: fadeInText 1s forwards;
     animation-delay: .2s;
     position: absolute;
-    top: 10%;
+    top: 15%;
     left: var(--left-edge);
     max-width: 300px;
     mask-image: linear-gradient(to top, rgba(0,0,0,0.1) 0%,rgba(0,0,0,1) 100%);
@@ -378,17 +378,15 @@ nav > div {
 /* Overrides for Network Logo positioning */
 .history {
     max-width: 100px;
-    top: 15%;
 }
 
 .amc {
     max-width: 160px;
-    top: 18%;
 }
 
 .investigationdiscovery {
     max-width: 150px;
-    top: 18%;
+    top: 12%;
 }
 
 /* Slideshow container */
@@ -530,6 +528,7 @@ nav > div {
     text-align: left;
     transform: translate(-50%, -50%);
     max-width: 60vw;
+    line-height: 0.8;
 }
 
 /* 
@@ -545,7 +544,7 @@ Slidewshow Quotes
     margin-top: 4em; /* Space between title and quotes */
     font-size: 1.8rem;
     letter-spacing: 0.06em;
-    line-height: 0.5;
+    line-height: 0.95;
 }
 
 .quote-source {
@@ -567,7 +566,28 @@ Slidewshow Quotes
     opacity: 0;
     animation: fadeInText 1s forwards;
     animation-delay: .6s;
-    margin-top: 1.8em;
+    margin-top: 3em;
+}
+
+.sugar-quote2 {
+    opacity: 0;
+    animation: fadeInText 1s forwards;
+    animation-delay: 1.2s;
+    margin-top: 1em;
+}
+
+.sugar-quote3 {
+    opacity: 0;
+    animation: fadeInText 1s forwards;
+    animation-delay: 1.8s;
+    margin-top: 1em;
+}
+
+.sugar-quote4 {
+    opacity: 0;
+    animation: fadeInText 1s forwards;
+    animation-delay: 2.4s;
+    margin-top: 1em;
 }
 
 .quote2 {
@@ -582,7 +602,7 @@ Slidewshow Quotes
     opacity: 0;
     animation: fadeInText 1s forwards;
     animation-delay: 1.4s;
-    margin-top: -6em;
+    margin-top: -2em;
     margin-left: 15em;
 }
 
@@ -590,7 +610,7 @@ Slidewshow Quotes
     opacity: 0;
     animation: fadeInText 1s forwards;
     animation-delay: 1.8s;
-    margin-top: -6em;
+    margin-top: -5em;
     margin-left: 15em;
 }
 
@@ -601,7 +621,7 @@ Slidewshow Quotes
     opacity: 0;
     animation: fadeInText 1s forwards;
     animation-delay: .6s;
-    margin-top: 5.25em;
+    margin-top: 5.5em;
 }
 
 @keyframes fadeInText {
