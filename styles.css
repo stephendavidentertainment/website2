@@ -55,14 +55,26 @@ h4 {
 }
 
 p {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    font-size: 1rem;
+    /* margin-top: 1.2rem; */
+    margin-bottom: 1rem;
     font-family: var(--san-serif);
-    line-height: 1.5;
-    max-width: 600px;
+    font-weight: 400;
+    line-height: 1.2;
+    max-width: 700px;
     letter-spacing: 0.05em;
-    /* text-align: justify; */
+    text-align: justify;
+}
+br {
+    display: block;
+    margin: 0 0 1rem 0;
+}
+
+strong {
+    font-weight: 600;
+    font-style: italic;
+    color: var(--accent-color);
+
 }
 
 /* Just used for "Stephen David Entertainment" on About page */
@@ -96,13 +108,6 @@ p {
     position: absolute;
     top: 30%;
     left: var(--left-edge)
-}
-
-.quote-source {
-    font-size: .75rem;
-    font-style: italic;
-    font-weight: 400;
-    margin-left: .5rem;
 }
 
 .website-container {
@@ -357,6 +362,32 @@ nav > div {
    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.1) 0%,rgba(0,0,0,1) 100%);
 }
 
+.network-logo {
+    opacity: 0;
+    animation: fadeInText 1s forwards;
+    animation-delay: .2s;
+    position: absolute;
+    top: 10%;
+    left: var(--left-edge);
+    max-width: 300px;
+    mask-image: linear-gradient(to top, rgba(0,0,0,0.1) 0%,rgba(0,0,0,1) 100%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.1) 0%,rgba(0,0,0,1) 100%);
+}
+
+/* Overrides for Network Logo positioning */
+.history {
+    max-width: 100px;
+    top: 15%;
+}
+
+.amc {
+    max-width: 100px;
+}
+
+.investigationdiscovery {
+    max-width: 100px;
+}
+
 /* Slideshow container */
 .slideshow {
     /* max-width: 1000px; */
@@ -491,28 +522,48 @@ nav > div {
     animation: fadeInText 1s forwards;
     animation-delay: .2s;
     position: absolute;
-    top: 25%;
+    top: 35%;
     left: var(--left-edge);
     text-align: left;
     transform: translate(-50%, -50%);
     max-width: 60vw;
 }
 
+/* 
+================================================================
+Slidewshow Quotes
+================================================================ 
+*/
 .quotes {
     position: absolute;
-    top: 30%;
-    left: 10%;
+    top: 20%;
+    left: var(--left-edge);
     color: white;
-    margin-top: 5em; /* Space between title and quotes */
+    margin-top: 4em; /* Space between title and quotes */
+    font-size: 1.8rem;
+    letter-spacing: 0.06em;
+}
+
+.quote-source {
     font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 400;
+    margin-left: .5rem;
 }
 
 .quote1 {
     opacity: 0;
     animation: fadeInText 1s forwards;
     animation-delay: .6s;
-    margin-top: 2em;
-    margin-left: 1em;
+    margin-top: 2.6em;
+    /* margin-left: .5em; */
+}
+
+.sugar-quote1 {
+    opacity: 0;
+    animation: fadeInText 1s forwards;
+    animation-delay: .6s;
+    margin-top: 1.8em;
 }
 
 .quote2 {
@@ -529,6 +580,24 @@ nav > div {
     animation-delay: 1.4s;
     margin-top: -6em;
     margin-left: 15em;
+}
+
+.quote4 {
+    opacity: 0;
+    animation: fadeInText 1s forwards;
+    animation-delay: 1.8s;
+    margin-top: -6em;
+    margin-left: 15em;
+}
+
+
+.capsized-quote1,
+.patterson-quote1,
+.nascar-quote1 {
+    opacity: 0;
+    animation: fadeInText 1s forwards;
+    animation-delay: .6s;
+    margin-top: 5em;
 }
 
 @keyframes fadeInText {
