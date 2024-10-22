@@ -55,14 +55,26 @@ h4 {
 }
 
 p {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    font-size: 1rem;
+    /* margin-top: 1.2rem; */
+    margin-bottom: 1rem;
     font-family: var(--san-serif);
-    line-height: 1.5;
-    max-width: 600px;
+    font-weight: 400;
+    line-height: 1.2;
+    max-width: 700px;
     letter-spacing: 0.05em;
-    /* text-align: justify; */
+    text-align: justify;
+}
+br {
+    display: block;
+    margin: 0 0 1rem 0;
+}
+
+strong {
+    font-weight: 600;
+    font-style: italic;
+    color: var(--accent-color);
+
 }
 
 /* Just used for "Stephen David Entertainment" on About page */
