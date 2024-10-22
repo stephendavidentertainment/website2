@@ -106,8 +106,9 @@ strong {
 .laurels {
     z-index: 1;
     position: absolute;
-    top: 30%;
-    left: var(--left-edge)
+    top: 50%;
+    left: var(--left-edge);
+    max-width: 600px;
 }
 
 .website-container {
@@ -228,7 +229,7 @@ nav > div {
     position: relative;
     text-align: center;
     /* font-family: "Canopee"; */
-    font-size: 15vw;
+    font-size: 10vw;
     line-height: 80%;
     will-change: transform;
     transition: letter-spacing 0.3s;
@@ -381,11 +382,13 @@ nav > div {
 }
 
 .amc {
-    max-width: 100px;
+    max-width: 160px;
+    top: 18%;
 }
 
 .investigationdiscovery {
-    max-width: 100px;
+    max-width: 150px;
+    top: 18%;
 }
 
 /* Slideshow container */
@@ -542,6 +545,7 @@ Slidewshow Quotes
     margin-top: 4em; /* Space between title and quotes */
     font-size: 1.8rem;
     letter-spacing: 0.06em;
+    line-height: 0.5;
 }
 
 .quote-source {
@@ -571,7 +575,7 @@ Slidewshow Quotes
     animation: fadeInText 1s forwards;
     animation-delay: 1s;
     margin-top: 2em;
-    margin-left: 4em;
+    margin-left: 2em;
 }
 
 .quote3 {
@@ -597,7 +601,7 @@ Slidewshow Quotes
     opacity: 0;
     animation: fadeInText 1s forwards;
     animation-delay: .6s;
-    margin-top: 5em;
+    margin-top: 5.25em;
 }
 
 @keyframes fadeInText {
