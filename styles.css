@@ -69,9 +69,11 @@ p {
     letter-spacing: 0.05em;
     text-align: justify;
 }
+
 br {
-    display: block;
-    margin: 0 0 1rem 0;
+    display: block; /* makes it have a width */
+    content: ""; /* clears default height */
+    margin-top: .4rem; /* change this to whatever height you want it */
 }
 
 strong {
@@ -108,12 +110,26 @@ strong {
 }
 
 .laurels {
-    z-index: 1;
+    /* z-index: 1; */
     position: absolute;
     top: 45%;
     left: var(--left-edge);
     width: 60vw;
     /* max-width: 600px; */
+}
+
+.wars-laurels {
+    position: absolute;
+    top: 40%;
+    left: var(--left-edge);
+    width: 50vw;
+}
+
+.titans-laurels {
+    position: absolute;
+    top: 58%;
+    left: 19%;
+    width: 16vw;
 }
 
 .website-container {
@@ -610,7 +626,15 @@ nav > div {
     text-align: left;
     /* transform: translate(-50%, -50%); */
     max-width: 60vw;
-    line-height: 0.8;
+    line-height: 0.9;
+}
+
+.tile-size1 {
+    font-size: 4.5rem;
+}
+
+.tile-size2 {
+    font-size: 6.5rem;
 }
 
 .double-title-size {
