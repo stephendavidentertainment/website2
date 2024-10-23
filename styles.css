@@ -305,7 +305,7 @@ nav > div {
 
 #logo {
     width: 20vw;
-    min-width: 200px; /* Ensure a minimum width */
+    min-width: 200px;
     animation: fadeInUp 2s ease-in-out;
     mask-image: var(--gradient-to-black);
     -webkit-mask-image: var(--gradient-to-black);
@@ -314,6 +314,7 @@ nav > div {
 
 #about {
     /* background: #f55a36; */
+    /* animation: fadeInUp 2s ease-in-out; */
     color: white;
     padding: 2em;
     display: flex;
@@ -393,6 +394,10 @@ nav > div {
     top: 18%;
 }
 
+.cmt {
+    max-width: 140px;
+}
+
 /* .amazon {
     top: 15%;
     max-width: 150px;
@@ -400,7 +405,7 @@ nav > div {
 
 
 /* Slideshow container */
-.slideshow {
+.work {
     /* max-width: 1000px; */
     position: relative;
     margin: auto;
@@ -492,8 +497,30 @@ nav > div {
     animation-duration: 1.5s;
 }
 
+.slowfade {
+    animation-name: slowfade;
+    animation-duration: 3s;
+}
+
+.fade-up {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.fade-up2 {
+    animation: fadeInUp 4s ease-in-out;
+}
+
+.fade-up3 {
+    animation: fadeInUp 4.2s ease-in-out;
+}
+
 @keyframes fade {
     from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes slowfade {
+    from {opacity: 0.1}
     to {opacity: 1}
 }
 
