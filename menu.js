@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, "<");
 
     timeline.to(".sub-nav", {
-        bottom: "10%",
+        bottom: "5%",
         opacity: 1,
         duration: 0.5,
         delay: 0.5
@@ -44,12 +44,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         isOpen = !isOpen;
     });
-
     menuItems.forEach(item => {
         item.addEventListener("click", function () {
             if (isOpen) {
                 timeline.reverse();
                 isOpen = false;
+                toggleButton.classList.toggle("active");
             }
         });
     });

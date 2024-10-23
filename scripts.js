@@ -1,5 +1,6 @@
 let slideIndex = 1;
-let slideTimer = 4000;
+// let slideTimer = 4000;
+let slideTimer = 10000;
 let isPaused = false;
 let slideInterval = setInterval(() => plusSlides(1), slideTimer); 
 showSlides(slideIndex);
