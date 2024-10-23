@@ -1,0 +1,28 @@
+name: Merge Branch
+
+on:
+  push:
+    branches:
+      - 'main' # The branch you want to merge changes from
+
+jobs:
+  merge-branch:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+        
+    - name: Merge branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        TARGET_BRANCH: 'publish' # The branch you want to merge changes to
+        USER_NAME: 'boo13' # The username of the user whose commits you want to merge
+      run: |
+        git config user.name "$USER_NAME"
+        git config user.email "$USER_NAME@users.noreply.github.com"
+        git checkout $TARGET_BRANCH
+        git pull
+        git merge origin/source-branch --no-ff
+        git push
