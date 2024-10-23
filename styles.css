@@ -106,9 +106,10 @@ strong {
 .laurels {
     z-index: 1;
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: var(--left-edge);
-    max-width: 600px;
+    width: 60vw;
+    /* max-width: 600px; */
 }
 
 .website-container {
