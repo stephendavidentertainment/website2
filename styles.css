@@ -113,7 +113,7 @@ strong {
     position: absolute;
     top: 45%;
     left: var(--left-edge);
-    width: 60vw;
+    width: 55vw;
     /* max-width: 600px; */
 }
 
@@ -150,7 +150,8 @@ strong {
 
 .titans-laurels {
     position: absolute;
-    top: 58%;
+    /* top: 58%; */
+    top: 40%;
     left: 19%;
     width: 16vw;
 }
@@ -343,8 +344,9 @@ nav > div {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 2s ease-in-out;
+    pointer-events: none;
 }
 
 #logo {
@@ -444,24 +446,29 @@ nav > div {
 
 /* Overrides for Network Logo positioning */
 .history {
-    max-width: 100px;
+    width: 6vw;
 }
 
 .amc {
-    max-width: 160px;
+    width: 10vw;
 }
 
 .investigationdiscovery {
-    max-width: 150px;
+    width: 10vw;
     top: 12%;
 }
 
 .discovery {
-    top: 18%;
+    width: 18vw;
+    /* top: 18%; */
 }
 
 .cmt {
-    max-width: 140px;
+    width: 10vw;
+}
+
+.netflix {
+    width: 18vw;
 }
 
 /* .amazon {
@@ -572,7 +579,7 @@ nav > div {
 }
 
 .fade-up2 {
-    animation: fadeInUp2 4s ease-in-out;
+    animation: fadeInUp2 2s ease-in-out;
 }
 
 .fade-up3 {
@@ -786,6 +793,12 @@ Slidewshow Quotes
     margin-left: 14em;
 }
 
+.jonestown-quote2 {
+    opacity: 0;
+    animation: fadeInText 1s forwards;
+    animation-delay: var(--delay-1);
+    margin-top: 12em;
+}
 
 .capsized-quote1 {
     opacity: 0;
@@ -809,12 +822,14 @@ Slidewshow Quotes
     margin-left: 40vw;
 }
 
+.frontier-quote1,
+.wyatt-quote1,
 .patterson-quote1,
 .nascar-quote1 {
     opacity: 0;
     animation: fadeInText 1s forwards;
     animation-delay: .6s;
-    margin-top: 5.5em;
+    margin-top: 6.5em;
 }
 
 @keyframes fadeInText {
