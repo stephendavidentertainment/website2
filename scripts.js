@@ -1,36 +1,16 @@
-const video = document.getElementById('video-background');
-const logo = document.querySelector('img');
-
-// Check if the video can play
-video.addEventListener('canplay', () => {
-    console.log('Video can play');
-});
-
-// Check for any errors
-video.addEventListener('error', (e) => {
-    console.error('Error loading video:', e);
-});
-
-logo.addEventListener('animationend', () => {
-    video.style.opacity = 1;
-    document.body.style.background = 'none';
-    video.play(); // Ensure the video is played
-
-    // Fade out the logo after the video starts playing
-    setTimeout(() => {
-        logo.style.animation = 'fadeOut 3s ease-in-out forwards';
-    }, 500); // Delay to ensure video starts playing
-});
-
 let slideIndex = 1;
-let slideInterval = setInterval(() => plusSlides(1), 4000); // Automatically advance the slide every 4 seconds
+let slideTimer = 4000;
+let isPaused = false;
+let slideInterval = setInterval(() => plusSlides(1), slideTimer); 
 showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
     fadeOutSlide(slideIndex, () => {
         showSlides(slideIndex += n);
-        resetSlideInterval();
+        if (!isPaused) {
+            resetSlideInterval();
+        }
     });
 }
 
@@ -38,7 +18,9 @@ function plusSlides(n) {
 function currentSlide(n) {
     fadeOutSlide(slideIndex, () => {
         showSlides(slideIndex = n);
-        resetSlideInterval();
+        if (!isPaused) {
+            resetSlideInterval();
+        }
     });
 }
 
@@ -60,7 +42,9 @@ function showSlides(n) {
 
 function resetSlideInterval() {
     clearInterval(slideInterval);
-    slideInterval = setInterval(() => plusSlides(1), 4000);
+    if (!isPaused) {
+        slideInterval = setInterval(() => plusSlides(1), slideTimer);
+    }
 }
 
 function fadeOutSlide(index, callback) {
@@ -77,4 +61,10 @@ function fadeOutSlide(index, callback) {
     }
 }
 
+function togglePause() {
+    isPaused = !isPaused;
+    resetSlideInterval();
+    console.log(`Slideshow is now ${isPaused ? 'paused' : 'running'}`);
+}
 
+// Example usage: Call togglePause() to pause or resume the slideshow
