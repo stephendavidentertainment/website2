@@ -302,7 +302,7 @@ nav > div {
 
 .sub-nav {
     position: absolute;
-    bottom: 5%;
+    bottom: 3%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
