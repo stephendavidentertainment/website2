@@ -336,9 +336,10 @@ nav > div {
 }
 
 #contact {
-    /* position: relative;
+    position: relative;
     margin: auto;
-    overflow: hidden; */
+    overflow: hidden;
+    z-index: 1;
     padding: 2em;
     display: flex;
     justify-content: left;
@@ -361,9 +362,30 @@ nav > div {
 
 .slide-hero {
     width: 100%;
+    position: absolute;
+    top: 0;
     mask-image: linear-gradient(to right, rgba(0,0,0,0.1) 0%,rgba(0,0,0,1) 100%);
    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.1) 0%,rgba(0,0,0,1) 100%);
 }
+
+.contact-content {
+    z-index: 5;
+    h2 {
+        font-size: 6rem;
+        margin-bottom: 1rem;
+        color: var(--accent-color);
+        text-align: left;
+        font-family: var(--san-serif);
+        font-weight: 700;
+    }
+}
+
+/* .contact-hero {
+    z-index: 10;
+    width: 100%;
+    mask-image: linear-gradient(to right, rgba(0,0,0,0.1) 0%,rgba(0,0,0,1) 100%);
+   -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.1) 0%,rgba(0,0,0,1) 100%);
+} */
 
 .network-logo {
     opacity: 0;
@@ -567,6 +589,10 @@ nav > div {
     transform: translate(-50%, -50%);
     max-width: 60vw;
     line-height: 0.8;
+}
+
+.double-title-size {
+    font-size: 7rem;
 }
 
 /* 
