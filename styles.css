@@ -865,6 +865,14 @@ Slidewshow Quotes
         font-size: 2.5rem;
     }
 
+    .network-logo {
+        top: 15%;
+    }
+    
+    .project-title {
+        top: 20%;
+    }
+
     .quotes {
         font-size: 1.2rem;
     }
