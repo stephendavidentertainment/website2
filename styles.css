@@ -110,12 +110,35 @@ strong {
 }
 
 .laurels {
-    /* z-index: 1; */
     position: absolute;
     top: 45%;
     left: var(--left-edge);
     width: 60vw;
     /* max-width: 600px; */
+}
+
+.jonestown-laurel1 {
+    position: absolute;
+    top: 57%;
+    left: var(--left-edge);
+    /* width: 40vw; */
+    max-height: 10vh;
+}
+
+.jonestown-laurel2 {
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    max-height: 16vh;
+    /* width: 40vw; */
+}
+
+.jonestown-laurel3 {
+    position: absolute;
+    top: 57%;
+    left: var(--left-edge);
+    max-height: 16vh;
+    /* width: 40vw; */
 }
 
 .wars-laurels {
