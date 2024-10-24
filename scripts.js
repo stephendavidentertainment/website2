@@ -69,3 +69,18 @@ function togglePause() {
 }
 
 // Example usage: Call togglePause() to pause or resume the slideshow
+
+// Add event listener for keyboard left and right keys
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowRight') {
+        plusSlides(1);
+    } else if (event.key === 'ArrowLeft') {
+        plusSlides(-1);
+    }
+});
+// Add event listener for the space bar to toggle pause
+document.addEventListener('keydown', function(event) {
+    if (event.key === ' ') {
+        togglePause();
+    }
+});
