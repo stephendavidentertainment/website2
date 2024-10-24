@@ -117,23 +117,7 @@ strong {
     /* max-width: 600px; */
 }
 
-.jonestown-laurel1 {
-    position: absolute;
-    top: 57%;
-    left: var(--left-edge);
-    /* width: 40vw; */
-    max-height: 10vh;
-}
-
-.jonestown-laurel2 {
-    position: absolute;
-    top: 57%;
-    left: 50%;
-    max-height: 16vh;
-    /* width: 40vw; */
-}
-
-.jonestown-laurel3 {
+.jonestown-laurel {
     position: absolute;
     top: 57%;
     left: var(--left-edge);
@@ -701,64 +685,35 @@ Slidewshow Quotes
     margin-left: .5rem;
 }
 
+/* Quote 1 */
 .quote1 {
     opacity: 0;
     animation: fadeInText 1s forwards;
     animation-delay: var(--delay-1);
-    margin-top: 2.6em;
-    /* margin-left: .5em; */
 }
 
-.sugar-quote1 {
-    opacity: 0;
-    animation: fadeInText 1s forwards;
-    animation-delay: var(--delay-1);
-    margin-top: 3em;
+.quote1-pos1 {
+    margin-top: 6vh;  
 }
 
-.sugar-quote2 {
-    opacity: 0;
-    animation: fadeInText 1s forwards;
-    animation-delay: var(--delay-2);
-    margin-top: 1em;
+/* .quote1-pos2 {
+    margin-top: 6.5vh;  
+} */
+
+.quote1-pos3 {
+    margin-top: 22vh;  
 }
 
-.sugar-quote3 {
-    opacity: 0;
-    animation: fadeInText 1s forwards;
-    animation-delay: var(--delay-3);
-    margin-top: 1em;
-}
-
-.sugar-quote4 {
-    opacity: 0;
-    animation: fadeInText 1s forwards;
-    animation-delay: 2.4s;
-    margin-top: 1em;
-}
-
+/* Quote 2 */
 .quote2 {
     opacity: 0;
     animation: fadeInText 1s forwards;
     animation-delay: var(--delay-2);
+}
+
+.quote2-pos1 {
     margin-top: 2em;
     margin-left: 2em;
-}
-
-.quote3 {
-    opacity: 0;
-    animation: fadeInText 1s forwards;
-    animation-delay: var(--delay-3);
-    margin-top: -2em;
-    margin-left: 15em;
-}
-
-.quote4 {
-    opacity: 0;
-    animation: fadeInText 1s forwards;
-    animation-delay: 1.8s;
-    margin-top: -5em;
-    margin-left: 15em;
 }
 
 .gold-quote2 {
@@ -769,28 +724,11 @@ Slidewshow Quotes
     margin-left: 0;
 }
 
-.gold-quote3 {
+.sugar-quote2 {
     opacity: 0;
     animation: fadeInText 1s forwards;
-    animation-delay: 1.8s;
-    margin-top: -5em;
-    margin-left: 17em;
-}
-
-
-.sons-quote1 {
-    opacity: 0;
-    animation: fadeInText 1s forwards;
-    animation-delay: var(--delay-1);
-    margin-top: 2em;
-}
-
-.sons-quote3 {
-    opacity: 0;
-    animation: fadeInText 1s forwards;
-    animation-delay: var(--delay-3);
-    margin-top: -2em;
-    margin-left: 14em;
+    animation-delay: var(--delay-2);
+    margin-top: 1em;
 }
 
 .jonestown-quote2 {
@@ -800,18 +738,43 @@ Slidewshow Quotes
     margin-top: 12em;
 }
 
-.capsized-quote1 {
-    opacity: 0;
-    animation: fadeInText 1s forwards;
-    animation-delay: var(--delay-1);
-    margin-top: 7.5em;
-}
-
 .capsized-quote2 {
     opacity: 0;
     animation: fadeInText 1s forwards;
     animation-delay: var(--delay-2);
     margin-top: 2em;
+}
+
+/* Quote 3 */
+.quote3 {
+    opacity: 0;
+    animation: fadeInText 1s forwards;
+    animation-delay: var(--delay-3);
+    margin-top: -2em;
+    margin-left: 15em;
+}
+
+.sugar-quote3 {
+    opacity: 0;
+    animation: fadeInText 1s forwards;
+    animation-delay: var(--delay-3);
+    margin-top: 1em;
+}
+
+.gold-quote3 {
+    opacity: 0;
+    animation: fadeInText 1s forwards;
+    animation-delay: 1.8s;
+    margin-top: -5em;
+    margin-left: 17em;
+}
+
+.sons-quote3 {
+    opacity: 0;
+    animation: fadeInText 1s forwards;
+    animation-delay: var(--delay-3);
+    margin-top: 2em;
+    margin-left: var(--left-edge);
 }
 
 .capsized-quote3 {
@@ -822,14 +785,20 @@ Slidewshow Quotes
     margin-left: 40vw;
 }
 
-.frontier-quote1,
-.wyatt-quote1,
-.patterson-quote1,
-.nascar-quote1 {
+/* Quote 4 */
+.quote4 {
     opacity: 0;
     animation: fadeInText 1s forwards;
-    animation-delay: .6s;
-    margin-top: 6.5em;
+    animation-delay: 1.8s;
+    margin-top: -5em;
+    margin-left: 15em;
+}
+
+.sugar-quote4 {
+    opacity: 0;
+    animation: fadeInText 1s forwards;
+    animation-delay: 2.4s;
+    margin-top: 1em;
 }
 
 @keyframes fadeInText {
