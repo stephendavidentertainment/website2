@@ -138,3 +138,26 @@ window.addEventListener('load', function() {
     const loader = document.querySelector('.loading-overlay');
     loader.classList.add('hidden');
 });
+
+// Contact form
+document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    // Optional: Add loading state
+    const button = this.querySelector('button[type="submit"]');
+    button.disabled = true;
+    button.innerHTML = 'Sending...';
+    
+    // Optional: Basic client-side validation
+    const email = this.querySelector('#email').value;
+    if (!isValidEmail(email)) {
+        e.preventDefault();
+        alert('Please enter a valid email address');
+        button.disabled = false;
+        button.innerHTML = 'Send Message';
+        return;
+    }
+});
+
+function isValidEmail(email) {
+    const re = /^(([^<>()$$$$\\.,;:\s@"]+(\.[^<>()$$$$\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}

@@ -25,6 +25,7 @@
     /* Other */
     --left-edge: 8%;
     --gradient-to-black: linear-gradient(to top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,1) 100%);
+    --gradient-to-black-right: linear-gradient(to right, rgba(0,0,0,0.3) 0%,rgba(0,0,0,1) 100%);
     --title-max-w48: 48vw;
     --subtitle-line-height: 0.45;
     --subtitle-line-height2: 0.65;
@@ -258,6 +259,7 @@ nav > div {
     /* background: var(--near-black); */
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     will-change: transform;
+    z-index: 10;
 }
 
 .overlay-menu {
@@ -272,6 +274,7 @@ nav > div {
     justify-content: center;
     align-items: center;
     color: #fff;
+    z-index: 11;
 }
 
 .menu-item {
@@ -1044,4 +1047,104 @@ Slidewshow Quotes
 @keyframes moveDown {
     0% { transform: translateY(20px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
+}
+
+.contact-form {
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    /* background: #f9f9f9; */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: var(--clr-accent);
+    /* color: white; */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Optional: Add form validation styles */
+.form-group input:invalid,
+.form-group textarea:invalid {
+    border-color: #ff6b6b;
+}
+
+.form-group input:valid,
+.form-group textarea:valid {
+    border-color: #51cf66;
+}
+
+/* .contact-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: url('https://stephendavidentertainment.github.io/website/assets/images/shows/AmericanGenius3.jpg') no-repeat center center;
+    background-size: cover;
+    mask-image: var(--gradient-to-black-right);
+    -webkit-mask-image: var(--gradient-to-black-right);
+    z-index: 4;
+
+    h2 {
+        z-index: 5;
+    }
+} */
+
+.fullscreen-bg {
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://stephendavidentertainment.github.io/website/assets/images/shows/AmericanGenius3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* mask-image: var(--gradient-to-black-right);
+    -webkit-mask-image: var(--gradient-to-black-right); */
+    z-index: 4;
+}
+
+.contact-container {
+    opacity: 0;
+    animation: fadeInText 1s forwards;
+    animation-delay: .2s;
+    position: absolute;
+    top: 25%;
+    left: var(--left-edge);
+    text-align: left;
+    /* transform: translate(-50%, -50%); */
+    max-width: 60vw;
+    line-height: 0.9;
 }
