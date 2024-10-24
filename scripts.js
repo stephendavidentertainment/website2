@@ -1,11 +1,9 @@
 let slideIndex = 1;
-// let slideTimer = 4000;
-let slideTimer = 10000;
+let slideTimer = 4000;
 let isPaused = false;
 let slideInterval = setInterval(() => plusSlides(1), slideTimer); 
 showSlides(slideIndex);
 
-// Next/previous controls
 function plusSlides(n) {
     fadeOutSlide(slideIndex, () => {
         showSlides(slideIndex += n);
@@ -15,7 +13,6 @@ function plusSlides(n) {
     });
 }
 
-// Thumbnail image controls
 function currentSlide(n) {
     fadeOutSlide(slideIndex, () => {
         showSlides(slideIndex = n);
@@ -28,17 +25,14 @@ function currentSlide(n) {
 function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
     if (n > slides.length) {slideIndex = 1}
     if (n < 1) {slideIndex = slides.length}
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
     slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
+    updateProgressIndicator(slideIndex, slides.length);
+    updateNumberText(slideIndex, slides.length);
 }
 
 function resetSlideInterval() {
@@ -68,6 +62,34 @@ function togglePause() {
     console.log(`Slideshow is now ${isPaused ? 'paused' : 'running'}`);
 }
 
+function updateProgressIndicator(currentIndex, totalSlides) {
+    const progressIndicator = document.querySelector('.progress-indicator');
+    const progressBarWidth = document.querySelector('.progress-bar').offsetWidth;
+    const indicatorWidth = progressBarWidth / totalSlides;
+    progressIndicator.style.width = `${indicatorWidth}px`;
+    progressIndicator.style.left = `${(currentIndex - 1) * indicatorWidth}px`;
+
+    // Update numbertext-overlay position immediately after updating progress-indicator
+    updateNumberText(currentIndex, totalSlides);
+}
+
+function updateNumberText(currentIndex, totalSlides) {
+    const numberTextOverlay = document.querySelector('.numbertext-overlay');
+    numberTextOverlay.textContent = `${currentIndex} / ${totalSlides}`;
+    const progressIndicator = document.querySelector('.progress-indicator');
+    const indicatorLeft = progressIndicator.offsetLeft;
+    numberTextOverlay.style.left = `${indicatorLeft + progressIndicator.offsetWidth / 2}px`;
+}
+
+// Add event listeners to the progress bar
+document.querySelector('.progress-bar').addEventListener('click', function(event) {
+    const progressBarWidth = this.offsetWidth;
+    const clickPosition = event.offsetX;
+    const totalSlides = document.getElementsByClassName('mySlides').length;
+    const slideIndex = Math.floor((clickPosition / progressBarWidth) * totalSlides) + 1;
+    currentSlide(slideIndex);
+});
+
 // Example usage: Call togglePause() to pause or resume the slideshow
 
 // Add event listener for keyboard left and right keys
@@ -78,6 +100,7 @@ document.addEventListener('keydown', function(event) {
         plusSlides(-1);
     }
 });
+
 // Add event listener for the space bar to toggle pause
 document.addEventListener('keydown', function(event) {
     if (event.key === ' ') {
