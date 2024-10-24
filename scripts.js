@@ -63,23 +63,48 @@ function togglePause() {
 }
 
 function updateProgressIndicator(currentIndex, totalSlides) {
+    // Update numbertext-overlay first
+    updateNumberText(currentIndex, totalSlides);
+
     const progressIndicator = document.querySelector('.progress-indicator');
     const progressBarWidth = document.querySelector('.progress-bar').offsetWidth;
     const indicatorWidth = progressBarWidth / totalSlides;
     progressIndicator.style.width = `${indicatorWidth}px`;
     progressIndicator.style.left = `${(currentIndex - 1) * indicatorWidth}px`;
-
-    // Update numbertext-overlay position immediately after updating progress-indicator
-    updateNumberText(currentIndex, totalSlides);
 }
+
+// function updateProgressIndicator(currentIndex, totalSlides) {
+//     const progressIndicator = document.querySelector('.progress-indicator');
+//     const progressBarWidth = document.querySelector('.progress-bar').offsetWidth;
+//     const indicatorWidth = progressBarWidth / totalSlides;
+//     progressIndicator.style.width = `${indicatorWidth}px`;
+//     progressIndicator.style.left = `${(currentIndex - 1) * indicatorWidth}px`;
+
+//     // Update numbertext-overlay position immediately after updating progress-indicator
+//     updateNumberText(currentIndex, totalSlides);
+// }
+
+// function updateNumberText(currentIndex, totalSlides) {
+//     const numberTextOverlay = document.querySelector('.numbertext-overlay');
+//     numberTextOverlay.textContent = `${currentIndex} / ${totalSlides}`;
+//     const progressIndicator = document.querySelector('.progress-indicator');
+//     const indicatorLeft = progressIndicator.offsetLeft;
+//     numberTextOverlay.style.left = `${indicatorLeft + progressIndicator.offsetWidth / 2}px`;
+// }
 
 function updateNumberText(currentIndex, totalSlides) {
     const numberTextOverlay = document.querySelector('.numbertext-overlay');
+    const progressBar = document.querySelector('.progress-bar');
+    const progressBarWidth = progressBar.offsetWidth;
+    const indicatorWidth = progressBarWidth / totalSlides;
+    
+    // Calculate the position directly instead of relying on progress-indicator
+    const position = (currentIndex - 1) * indicatorWidth;
+    
     numberTextOverlay.textContent = `${currentIndex} / ${totalSlides}`;
-    const progressIndicator = document.querySelector('.progress-indicator');
-    const indicatorLeft = progressIndicator.offsetLeft;
-    numberTextOverlay.style.left = `${indicatorLeft + progressIndicator.offsetWidth / 2}px`;
+    numberTextOverlay.style.left = `${position + indicatorWidth / 2}px`;
 }
+
 
 // Add event listeners to the progress bar
 document.querySelector('.progress-bar').addEventListener('click', function(event) {
@@ -106,4 +131,10 @@ document.addEventListener('keydown', function(event) {
     if (event.key === ' ') {
         togglePause();
     }
+});
+
+// Add this to your JavaScript
+window.addEventListener('load', function() {
+    const loader = document.querySelector('.loading-overlay');
+    loader.classList.add('hidden');
 });
