@@ -65,6 +65,7 @@ body {
 h2 {
     font-size: var(--fs-xl);
     text-shadow: var(--text-shadow);
+    color: var(--clr-accent);
     /* margin-bottom: 1rem; */
 }
 
@@ -145,7 +146,7 @@ strong {
 
 .jonestown-laurel {
     position: absolute;
-    top: 57%;
+    top: 50%;
     left: var(--left-edge);
     max-height: 16vh;
     /* width: 40vw; */
@@ -161,7 +162,7 @@ strong {
 .titans-laurels {
     position: absolute;
     top: 35%;
-    left: 37%;
+    left: 39%;
     width: 16vw;
 }
 
@@ -179,7 +180,7 @@ section {
     display: flex;
     position: relative;
     scroll-snap-align: start;
-    color: var(--clr-accent);
+    /* color: var(--clr-accent); */
 }
 
 nav {
@@ -376,14 +377,13 @@ nav > div {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    /* z-index: 1; */
     /* width: 60%;
     box-sizing: border-box; */
 }
 
 #about img,
-#work img,
-#slideshow img,
-#contact img {
+#slideshow img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -393,12 +393,23 @@ nav > div {
     position: relative;
     margin: auto;
     overflow: hidden;
-    z-index: 1;
-    padding: 2em;
     display: flex;
     justify-content: left;
     flex-direction: column;
-    left: var(--left-edge);
+    background-color: black;
+    
+    p {
+        color: var(--clr-grey-40);
+    }
+
+    img {
+        width: clamp(150px, 20vw, 300px);
+    }
+}
+
+#work {
+    z-index: 2;
+    color: red;
 }
 
 .work-title {
@@ -755,30 +766,16 @@ Slidewshow Quotes
     margin-left: 2em;
 }
 
-.gold-quote2 {
-    opacity: 0;
-    animation: fadeInText 1s forwards;
-    animation-delay: var(--delay-2);
+.quote2-pos2 {
     margin-top: 2em;
-    margin-left: 0;
 }
 
 .sugar-quote2 {
-    opacity: 0;
-    animation: fadeInText 1s forwards;
-    animation-delay: var(--delay-2);
     margin-top: 1em;
 }
 
 .jonestown-quote2 {
-    opacity: 0;
-    animation: fadeInText 1s forwards;
-    animation-delay: var(--delay-1);
     margin-top: 12em;
-}
-
-.capsized-quote2 {
-    margin-top: 2em;
 }
 
 /* Quote 3 */
