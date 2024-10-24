@@ -138,7 +138,7 @@ strong {
 
 .mwba-laurels {
     position: absolute;
-    top: 60%;
+    top: 55%;
     left: var(--left-edge);
     width: 43vw;
     /* max-width: 600px; */
@@ -223,7 +223,7 @@ nav > div {
 .burger:before,
 .burger:after {
     content: "";
-    width: 40px;
+    width: clamp(20px, 3.25vw, 40px);
     height: 2px;
     position: absolute;
     background: #fff;
@@ -795,6 +795,11 @@ Slidewshow Quotes
     margin-left: 15em;
 }
 
+.quote3-pos3 {
+    margin-top: 2em;
+    margin-left: var(--left-edge);
+}
+
 .sugar-quote3 {
     margin-top: 1em;
 }
@@ -802,11 +807,6 @@ Slidewshow Quotes
 .gold-quote3 {
     margin-top: -5em;
     margin-left: 17em;
-}
-
-.sons-quote3 {
-    margin-top: 2em;
-    margin-left: var(--left-edge);
 }
 
 .capsized-quote3 {
@@ -932,4 +932,52 @@ Slidewshow Quotes
 .logo a {
     font-size: 20px;
 }
+}
+
+/* Progress bar */
+/* .slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+} */
+
+.progress-bar-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: min(1.5vh, 8px); /* Height of the progress bar */
+    background-color: var(--clr-grey-40); /* Background color of the progress bar */
+}
+
+.progress-bar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.progress-indicator {
+    position: absolute;
+    top: -100%;
+    transform: translateY(50%);
+    width: 10px; /* Width of the indicator */
+    height: min(1.5vh, 8px); /* Height of the indicator */
+    background-color: var(--clr-accent); /* Accent color of the indicator */
+    transition: left 0.5s ease; /* Smooth transition */
+    /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
+    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.numbertext-overlay {
+    position: absolute;
+    bottom: 100%; /* Adjust to position the numbertext above the progress bar */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center vertically */
+    font-size: 14px; /* Adjust font size as needed */
+    color: #fff; /* Text color */
+    z-index: 3; /* Ensure the numbertext is above the progress bar */
+    white-space: nowrap; /* Prevent text wrapping */
 }
