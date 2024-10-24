@@ -146,7 +146,7 @@ strong {
 
 .jonestown-laurel {
     position: absolute;
-    top: 57%;
+    top: 50%;
     left: var(--left-edge);
     max-height: 16vh;
     /* width: 40vw; */
@@ -162,7 +162,7 @@ strong {
 .titans-laurels {
     position: absolute;
     top: 35%;
-    left: 37%;
+    left: 39%;
     width: 16vw;
 }
 
@@ -377,12 +377,12 @@ nav > div {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    /* z-index: 1; */
     /* width: 60%;
     box-sizing: border-box; */
 }
 
 #about img,
-#work img,
 #slideshow img {
     width: 100%;
     height: 100%;
@@ -405,6 +405,11 @@ nav > div {
     img {
         width: clamp(150px, 20vw, 300px);
     }
+}
+
+#work {
+    z-index: 2;
+    color: red;
 }
 
 .work-title {
